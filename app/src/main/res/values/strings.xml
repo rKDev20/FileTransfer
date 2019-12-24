@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">File Transfer</string>
+    <string name="html_base">&lt;html>
+&lt;head>
+        &lt;title>File Transfer&lt;/title>
+    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">
+    &lt;style type=\"text/css\">
+body {font-family: Arial;margin: 0;padding: 0;}
+div, pre, p, img {border: 0 none;margin: 0;padding: 0;}
+.title {background-color: #e6e9eb;color: #000000;padding: 16px 16px 16px 16px;font-size: 13px;margin: 0;border-bottom: 1px solid #f3f3f3;}
+.wrap {display: table;width: 100%;height: 72px;_position: relative;overflow: hidden;border-bottom: 1px solid #f3f3f3;}
+.subwrap {vertical-align: middle;display: table-cell;_position: absolute;_top: 50%;}
+.content-1 {float: left;_position: relative;_top: -50%;margin: 0 16px 0 16px;padding: 3px 0 0 0;}
+.content-2 {float: left;_position: relative;_top: -50%;padding: 10px 0 0 0;}
+.content-3 {float: right;_position: relative;_top: -50%;padding: 12px 0 0 0;margin: 0 16px 0 0;}
+.text-primary {overflow: hidden;color: #202020;font-size: 13px;width:240px;text-overflow:ellipsis;}
+.text-second {overflow: hidden;color: #747474;font-size: 10px;}
+.icon-1 {height: 40px;width: 40px}
+.icon-2 {height: 24px;width: 24px}
+
+    &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;p class=\"title\">Receiving files from&#032;</string>
+    <string name="individual_item">&lt;div class=\"wrap\">
+    &lt;div class=\"subwrap\">
+        &lt;div class=\"content-1\">
+            &lt;img class=\"icon-1\" src=\"%1$s\">
+
+    &lt;/div>
+        &lt;div class=\"content-2\">
+            &lt;pre class=\"text-primary\">%2$s&lt;/pre>
+    &lt;pre class=\"text-second\">%3$s&lt;/pre>
+    &lt;/div>
+    &lt;div class=\"content-3\">
+    &lt;a href=\"%4$s\">
+                &lt;img class=\"icon-2\" src=\"/download.png\">
+                &lt;/a>
+        &lt;/div>
+    &lt;/div>
+&lt;/div></string>
+    <string name="html_end">.&lt;/p>&lt;/body>&lt;/html></string>
+    <string name="instructions">1. Turn on hotspot on receiver side.\n2. Connect this device to that hotspot.\n3. Scan the Qr/open the link provided below on the receiver device in any web browser.</string>
+    <string name="html_text">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+        &lt;script>
+function myFunction() {
+	var inp =document.createElement(\'input\');
+	document.body.appendChild(inp);
+	inp.value =document.getElementById(\"text\").textContent;
+	inp.select();
+	document.execCommand(\'copy\',false);
+	inp.remove();
+	var x = document.getElementById(\"snackbar\");
+	x.className = \"show\";
+	setTimeout(function(){ x.className = x.className.replace(\"show\", \"\"); }, 3000);
+}
+&lt;/script>
+&lt;style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+\@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+\@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+\@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+\@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+  transform:translateY(-50%);
+}
+
+.text {white-space: pre-line;
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  width: 80%;
+  margin: auto;
+  background: white;
+    cursor: pointer;
+}
+
+.text:hover {
+  background: #f1f1f1;
+}
+
+.copy {
+  float: top;
+  color: white;
+  margin: auto;
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+}
+
+&lt;/style>
+&lt;title>Copied text&lt;/title>
+&lt;/head>
+&lt;body>
+
+&lt;div id=\"myOverlay\" class=\"overlay\">
+  &lt;div class=\"overlay-content\">
+    &lt;p class=\"copy\">Click on the text to copy :&lt;/p>
+        &lt;p id=\"text\" class=\"text\" onclick=\"myFunction()\"></string>
+    <string name="html_text_end">&lt;/p>
+  &lt;/div>
+&lt;/div>
+&lt;/body>
+&lt;div id=\"snackbar\">Copied to clipboard!&lt;/div>
+&lt;/html>
+</string>
+
+</resources>

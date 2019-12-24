@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="qr_width">200dp</dimen>
+    <dimen name="qr_height">200dp</dimen>
+</resources>
